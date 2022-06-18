@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="box" id="heading">
-        <h1>It's <%=listName%> <br>Your To_Do_List</h1>
+        <h1> <%=listName%> <br> To_Do_List</h1>
     </div>
 
     <div class="box">
@@ -19,7 +19,8 @@
                 <div class="chk"><input type="checkbox"></div>
                 <div class="main"><p> <%= iteamArray[i].name %> </p></div>
                 <div class="rght"><form action="/delete" method="post">
-                    <button class="rm" type="submit" name="remove" value=<%= iteamArray[i].id %>    >-</button>
+                    <input type="hidden" name="listTitle" value=  <%= listName %>  >
+                    <button class="rm" type="submit" name="remove" value=<%= iteamArray[i].id %>  >-</button>
                 </form></div>
             </div>
             <% } %>
@@ -27,7 +28,7 @@
 
             <form  class="item entr" action="/" method="post">
                 <input type="text" name="newItm" placeholder="Add  a New Iteam" autocomplete="off" required>
-                <button type="submit" name="button" value=<%= listName %> >+</button>
+                <button type="submit" name="button" value= <%= listName %>  >+</button>
             </form>
     </div>
     
